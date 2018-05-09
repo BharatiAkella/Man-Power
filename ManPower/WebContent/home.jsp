@@ -6,11 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
         .mySlides {display: none;}
-img {vertical-align: middle;}
+img {vertical-align:cover;}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width:auto;
+  max-height: auto;
   position: absolute;
   margin: auto;
 }
@@ -286,18 +287,19 @@ img {vertical-align: middle;}
         </style>
     </head>
 
-    <body style="background: url(http://webneel.com/daily/sites/default/files/images/daily/05-2013/zoozoo-vodafone-wallpaper-13.jpg)">
-        <h2>Man Power</h2>
-
+    <body style="background: url(https://presencia.unah.edu.hn/assets/Uploads/_resampled/CroppedImage970546-ingenieria-mecanica-una-carrera-con-buenas-oportunidades.jpg); background-repeat: no-repeat; background-size: cover;">
+        <header>
+        <h1 style="text-align: center;color:turquoise; background-color:black; font-size:350%">Man Power</h1>
+		</header>
         <button onclick="document.getElementById('login').style.display='block'" style="width:10%">Login</button>
         <button onclick="myFunction()" class="dropbtn">Register</button>
 
         <div id="login" class="modal">
 
             <form class="modal-content animate" action="./ManPowerController" method="POST"
-            	style = "background: url(http://www.joseplus.com/news/data/20161015/p1065577323814743_839_thum.png);
+            	style = "background: url(https://eastvandental.com/wp-content/uploads/2017/07/find-vancouver-dentist.jpg);
                 	background-repeat: no-repeat;
-               		background-size: 100% 100%; 
+               		background-size: cover; 
                		color: white">
 
                 <div class="imgcontainer">
@@ -459,33 +461,7 @@ img {vertical-align: middle;}
             </div>
 
         </div>
- <div class="slideshow-container" >
-<div class="mySlides fade">
-  <img src="http://moziru.com/images/trolley-clipart-skilled-worker-6.gif"style="size:fill;">
-</div>
-<div class="mySlides fade">
-  <img src="http://www.downloadsource.es/upload/news/Windows%208.1/7301495298_8f23577904_h-800x533.jpg" style="size:fill;">
-</div>
-<div class="mySlides fade">
-  <img src="http://www.electronicbazaar.com.au/wp-content/uploads/2016/07/electronic-engineer-1-1024x717.jpg"style="size:fill;">
-</div>
-<div class="mySlides fade">
-  <img src="http://images.wisegeek.com/technical-electrical-engineer.jpg"style="size:fill;">
-</div>
-<div class="mySlides fade">
-  <img src="http://www.transportguru.in/images/fleetmanagement.jpg" style="width:100%; height:100%;">
-</div>
-</div>
-<br>
-<div style="text-align:center">
-  
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span>
-</div>
-
+ 
             <script>
                 // Get the modal
                 var modal = document.getElementById('login');

@@ -206,19 +206,21 @@
     width:60%;
 }
 table, th, td {
-    border: 1px solid black;
+    border: 2px solid black;
     border-collapse: collapse;
+    background:silver;
 }
 th, td {
     padding: 8px;
     text-align: center;
 }
-table tr:nth-child {
-   background-color: #fff;
+table tr:{
+   background-color:cornsilk;
+   color:white;
 }
 table th {
-    background-color: black;
-    color: white;
+    background-color:purple;
+    color:aliceblue;
 }
                 #popup {
                     width: 100%;
@@ -226,7 +228,9 @@ table th {
                     float: left;
                 }
                 body {
-    				background-image: 
+    				background-image: url(https://cdn.wallpapersafari.com/48/30/h4KdxG.gif);
+    				background-size: cover;
+    				background-repeat:no-repeat;
 				}		
             </style>
         </head>
