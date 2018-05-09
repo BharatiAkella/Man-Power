@@ -5,6 +5,73 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
+        .mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: absolute;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
             .dropbtn {
                 background-color: #3498DB;
                 color: white;
@@ -56,23 +123,34 @@
             /* Full-width input fields */
 
             input[type=email],
-            input[type=password] {
-                width: 20%;
-                padding: 12px 20px;
-                margin: 8px 0;
+            input[type=password],
+            input[type=text] {
+            	background-color :lemonchiffon;
+                width: 50%;
+                padding: 10px 20px;
+                margin: 4px 0;
                 display: inline-block;
                 border: 1px solid #ccc;
                 box-sizing: border-box;
             }
 
             /* Set a style for all buttons */
-
+			input[type = submit]{
+				background-color : midnightblue;
+				color : white;
+				padding:14px 20px;
+				margin:8px 0;
+				border-radius:15px;
+				text-align: center;
+				cursor : pointer;
+				width: auto;
+			}
             button {
                 background-color: #4CAF50;
                 color: white;
                 padding: 14px 20px;
                 margin: 8px 0;
-                border: none;
+                border-radius: 15px;
                 cursor: pointer;
                 width: 10%;
             }
@@ -86,7 +164,7 @@
             .cancelbtn {
                 width: auto;
                 padding: 10px 18px;
-                background-color: #f44336;
+                background-color: olive;
             }
 
             /* Center the image and position the close button */
@@ -103,6 +181,7 @@
             }
 
             .container {
+            	text-align:left;
                 padding: 16px;
             }
 
@@ -132,16 +211,21 @@
                 /* Fallback color */
                 background-color: rgba(0, 0, 0, 0.4);
                 /* Black w/ opacity */
-                padding-top: 60px;
+                padding-top: 100px;
+                border-radius : 15px;
+
             }
 
             /* Modal Content/Box */
 
             .modal-content {
                 background-color: #fefefe;
+                color:indigo;
+                text:bold;
                 margin: 5% auto 15% auto;
                 /* 5% from the top, 15% from the bottom and centered */
-                border: 1px solid #888;
+                border: 0px solid #888;
+                border-radius:15px;
                 width: 50%;
                 /* Could be more or less, depending on screen size */
             }
@@ -151,8 +235,8 @@
             .close {
                 position: absolute;
                 right: 25px;
-                top: 0;
-                color: #000;
+                top: 5%;
+                color: deepskyblue;
                 font-size: 35px;
                 font-weight: bold;
             }
@@ -202,28 +286,34 @@
         </style>
     </head>
 
-    <body>
-		<h2>Man Power</h2>
+    <body style="background: url(http://webneel.com/daily/sites/default/files/images/daily/05-2013/zoozoo-vodafone-wallpaper-13.jpg)">
+        <h2>Man Power</h2>
 
         <button onclick="document.getElementById('login').style.display='block'" style="width:10%">Login</button>
         <button onclick="myFunction()" class="dropbtn">Register</button>
 
         <div id="login" class="modal">
 
-            <form class="modal-content animate" action="./ManPowerController" method="POST">
-              
+            <form class="modal-content animate" action="./ManPowerController" method="POST"
+            	style = "background: url(http://www.joseplus.com/news/data/20161015/p1065577323814743_839_thum.png);
+                	background-repeat: no-repeat;
+               		background-size: 100% 100%; 
+               		color: white">
+
                 <div class="imgcontainer">
+                <br>
                     <span onclick="document.getElementById('login').style.display='none'" class="close" title="Close Modal">&times;</span>
-				<h2> Login Form</h2>
-                </div>		
+                    </div> 
                 <div class="container">
-                    <label for="email"><b>Email</b></label>
+                <h2 style = "color : honeydew; text-align:center"> Login Form</h2>
+               
+                    <label for="email" style="color : white"><b>Email : </b></label>
                     <input type="email" placeholder="Enter Email" name="email" required>
                     <br>
-                    <label for="password"><b>Password</b></label>
+                    <label for="password" style="color : white"><b>Password : </b></label>
                     <input type="password" placeholder="Enter Password" name="password" required>
                     <br>
-                    <input type="radio" name="role" value="user"> User<br>
+                    <input type="radio" name="role" value="user" > User<br>
                     <input type="radio" name="role" value="force"> Force<br>
                     <input type="submit" name="login" value="Login ">
                     <input type="hidden" name="action" value="login">
@@ -239,47 +329,51 @@
         </div>
         <div id="userregister" class="modal">
 
-            <form name = form class="modal-content animate" action="./ManPowerController" method="POST" onsubmit = "validateForm()">
+            <form name= form class="modal-content animate" action="./ManPowerController" method="POST" onsubmit="validateForm()" 
+            style=" background: url(http://www.businessnewsdaily.com/images/i/000/008/987/original/employees.jpg?1434733492);
+                	background-repeat: no-repeat;
+               		background-size: 100% 100%; ">
                 <div class="imgcontainer">
                     <span onclick="document.getElementById('userregister').style.display='none'" class="close" title="Close Modal">&times;</span>
 
                 </div>
 
                 <div class="container">
-                    <h2> User Registration</h2>
-                    <label for="firstName"><b>First Name : </b></label>
+                <br>
+                    <h2 style= "text-align:center"> User Registration</h2>
+
+                    <label for="firstName"><b>First Name : </b></label><br>
                     <input type="text" name="firstName" placeholder="First Name" required><br>
-                    <label for="lastName"><b>Last Name : </b></label>
-                    <input type="text" name="lastName" placeholder="Last Name" required>
+                    <label for="lastName"><b>Last Name : </b></label><br>
+                    <input type="text" name="lastName" placeholder="Last Name" size="60" required>
                     <br>
-                    <label for="email"><b>Email : </b></label>
-                    <input type="email" placeholder="Enter Email" name="email" required>
+                    <label for="email"><b>Email : </b></label><br>
+                    <input type="email" placeholder="Enter Email" name="email" size="60" required>
                     <br>
-                    <label for="password"><b>Password : </b></label>
-                    <input type="password" placeholder="Enter Password" name="password" required>
+                    <label for="password"><b>Password : </b></label><br>
+                    <input type="password" placeholder="Enter Password" name="password" size="60" required>
                     <br>
-                    <label for="phoneNumber"><b>Phone Number : </b></label>
-                    <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+                    <label for="phoneNumber"><b>Phone Number : </b></label><br>
+                    <input type="text" name="phoneNumber" placeholder="Phone Number" size="60" required>
                     <br>
-                    <label for="address"><b>Address :<br> </b></label>
+                    <label for="address"><b>Address :<br> </b></label><br>
                     <label for="doorNumber"></label>
-                    <input type="text" name="doorNumber" placeholder="Door Number" required> <br>
+                    <input type="text" name="doorNumber" placeholder="Door Number" size="40" required> <br>
                     <label for="street"></label>
-                    <input type="text" name="street" placeholder="Street" required>
+                    <input type="text" name="street" placeholder="Street" size="40" required>
                     <br>
                     <label for="city"></label>
-                    <input type="text" name="city" placeholder="City" required> <br>
+                    <input type="text" name="city" placeholder="City" size="40" required> <br>
                     <label for="state"></label>
-                    <input type="text" name="state" placeholder="State" required> <br>
+                    <input type="text" name="state" placeholder="State" size="40" required> <br>
                     <label for="postalCode"></label>
-                    <input type="text" name="postalCode" placeholder="Postal Code" required><br>
+                    <input type="text" name="postalCode" placeholder="Postal Code" size="40" required><br>
                     <label for="country"></label>
-                    <input type="text" name="country" placeholder="Country" required> <br>
+                    <input type="text" name="country" placeholder="Country" size="40" required> <br>
                     <br>
                     <input type="submit" name="userregister" value="Register">
                     <input type="hidden" name="action" value="userregister">
                 </div>
-
                 <div class="container" style="background-color:#f1f1f1">
                     <button type="button" onclick="document.getElementById('userregister').style.display='none'" class="cancelbtn">Cancel</button>
                 </div>
@@ -289,28 +383,33 @@
         </div>
         <div id="forceregister" class="modal">
 
-           <form name = form1 class="modal-content animate" action="./ManPowerController" method="POST" onsubmit ="return validateForm1()">
-                <div class="imgcontainer">
+            <form name=form1 class="modal-content animate" action="./ManPowerController" method="POST" onsubmit="return validateForm1()"
+             style=" background: url(https://fabricmate.com/wp-content/uploads/2013/08/banner-photo-of-contractor-table-top-flipped-Large.jpg);
+                	background-repeat: no-repeat;
+               		background-size: 100% 100%; ">
+                <div class="imgcontainer" style = "background-color:navy">
                     <span onclick="document.getElementById('forceregister').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-                </div>
-
-                <div class="container">
-                    <h2> Force Registration</h2>
-                    <label for="firstName"><b>First Name : </b></label>
+				</div>
+                <div>
+                <br>
+                    <h1 style= "text-align:center ;color :navy"> Force Registration</h1>
+                    </div>
+                    <div class = "container">
+                    <label for="firstName"  style = "color: lawngreen"><b>First Name : </b></label><br>
                     <input type="text" name="firstName" placeholder="First Name" required><br>
-                    <label for="lastName"><b>Last Name : </b></label>
+                    <label for="lastName"  style = "color:lawngreen"><b>Last Name : </b></label><br>
                     <input type="text" name="lastName" placeholder="Last Name" required>
                     <br>
-                    <label for="email"><b>Email : </b></label>
+                    <label for="email"  style = "color:lawngreen"><b>Email : </b></label><br>
                     <input type="email" placeholder="Enter Email" name="email" required>
                     <br>
-                    <label for="password"><b>Password : </b></label>
+                    <label for="password"  style = "color:lawngreen"><b>Password : </b></label><br>
                     <input type="password" placeholder="Enter Password" name="password" required>
                     <br>
-                    <label for="phoneNumber"><b>Phone Number : </b></label>
+                    <label for="phoneNumber"  style = "color:lawngreen"><b>Phone Number : </b></label><br>
                     <input type="text" name="phoneNumber" placeholder="Phone Number" required>
                     <br><br>
+                    <label for = "subserviceType" style="color: lawngreen"><b>Service Type : </b></label>
                     <select name="subserviceType">
      						<c:forEach items="${serviceTypesList}" var="serviceType">
    							<c:forEach items = "${serviceType.subServiceType}" var="subserviceType"><br>
@@ -319,13 +418,13 @@
     						</c:forEach>
 					</select>
                     <br><br>
-                    <label for="experience"><b>Experience : </b></label>
+                    <label for="experience"  style = "color:lime"><b>Experience : </b></label><br>
                     <input type="text" name="experience" placeholder="Experience" required>
                     <br>
-                    <label for="costPerHour"><b>Cost Per Hour: </b></label>
+                    <label for="costPerHour"  style = "color:lime"><b>Cost Per Hour: </b></label><br>
                     <input type="text" name="costPerHour" placeholder="Cost Per Hour" required>
                     <br>
-                    <label for="address"><b>Address :<br> </b></label>
+                    <label for="address"  style = "color:lime"><b>Address :<br> </b></label>
                     <label for="doorNumber"></label>
                     <input type="text" name="doorNumber" placeholder="Door Number" required> <br>
                     <label for="street"></label>
@@ -339,18 +438,17 @@
                     <input type="text" name="postalCode" placeholder="Postal Code" required><br>
                     <label for="country"></label>
                     <input type="text" name="country" placeholder="Country" required> <br>
-
                     <br>
                     <input type="submit" name="forceregister" value="Register">
                     <input type="hidden" name="action" value="forceregister">
                 </div>
 
-                <div class="container" style="background-color:#f1f1f1">
+                <div class="container" style="background-color:peru">
                     <button type="button" onclick="document.getElementById('forceregister').style.display='none'" class="cancelbtn">Cancel</button>
                 </div>
             </form>
             <p> Hello </p>
-             <br>
+            <br>
 
         </div>
         <div class="dropdown">
@@ -361,52 +459,96 @@
             </div>
 
         </div>
-<p align = "center">
-			<img id = "" src = "http://1.bp.blogspot.com/-3KguoHFoO9s/TgGD83Z_n4I/AAAAAAAAAOQ/kh6V07q0QTs/s1600/zoozoo_wallpaper_11_1024x768.jpg" alt = "images"></p>
-        
+ <div class="slideshow-container" >
+<div class="mySlides fade">
+  <img src="http://moziru.com/images/trolley-clipart-skilled-worker-6.gif"style="size:fill;">
+</div>
+<div class="mySlides fade">
+  <img src="http://www.downloadsource.es/upload/news/Windows%208.1/7301495298_8f23577904_h-800x533.jpg" style="size:fill;">
+</div>
+<div class="mySlides fade">
+  <img src="http://www.electronicbazaar.com.au/wp-content/uploads/2016/07/electronic-engineer-1-1024x717.jpg"style="size:fill;">
+</div>
+<div class="mySlides fade">
+  <img src="http://images.wisegeek.com/technical-electrical-engineer.jpg"style="size:fill;">
+</div>
+<div class="mySlides fade">
+  <img src="http://www.transportguru.in/images/fleetmanagement.jpg" style="width:100%; height:100%;">
+</div>
+</div>
+<br>
+<div style="text-align:center">
+  
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span>
+</div>
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById('login');
-            var modal = document.getElementById('userregister');
-            var modal = document.getElementById('forceregister');
-            ///When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+            <script>
+                // Get the modal
+                var modal = document.getElementById('login');
+                var modal = document.getElementById('userregister');
+                var modal = document.getElementById('forceregister');
+                ///When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
                 }
-            }
 
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
+                function myFunction() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
 
-            window.onclick = function(event) {
-                if (!event.target.matches('.dropbtn')) {
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
 
-                    var dropdowns = document.getElementsByClassName("dropdown-content");
-                    var i;
-                    for (i = 0; i < dropdowns.length; i++) {
-                        var openDropdown = dropdowns[i];
-                        if (openDropdown.classList.contains('show')) {
-                            openDropdown.classList.remove('show');
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
                         }
                     }
                 }
-            }
-            function validateForm(){
-            	var password = form.password.value;
-            	if(password.length < 8)
-            		alert("Password must be atleast 8 characters");
-            	return false;
-            }
-            function validateForm1(){
-            	var password = form1.password.value;
-            	if(password.length < 8)
-            		alert("Password must be atleast 8 characters");
-            	return false;
-            }
-        </script>
+
+                function validateForm() {
+                    var password = form.password.value;
+                    if (password.length < 8)
+                        alert("Password must be atleast 8 characters");
+                    return false;
+                }
+
+                function validateForm1() {
+                    var password = form1.password.value;
+                    if (password.length < 8)
+                        alert("Password must be atleast 8 characters");
+                    return false;
+                }
+                var slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+                    for (i = 0; i < slides.length; i++) {
+                       slides[i].style.display = "none";  
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}    
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex-1].style.display = "block";  
+                    dots[slideIndex-1].className += " active";
+                    setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+            </script>
 
     </body>
 

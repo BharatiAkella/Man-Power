@@ -44,7 +44,7 @@ public class ManPowerController extends HttpServlet {
 		 if(null == action) {
 			 List<ServiceType> serviceTypeList = getServiceTypes();
 			 request.setAttribute("serviceTypesList", serviceTypeList);
-			 request.getRequestDispatcher("./home1.jsp").forward(request, response);
+			 request.getRequestDispatcher("./home.jsp").forward(request, response);
 			 //request.getRequestDispatcher("./userHome.jsp").forward(request, response);
 		 } else if ( action.equals("logout") ){
 			 System.out.println("LOGOUT");
@@ -202,7 +202,7 @@ public class ManPowerController extends HttpServlet {
 				 return true;
 			 }else{
 				// System.out.println("False");
-				 request.getRequestDispatcher("./home1.jsp").forward(request, response);	 
+				 request.getRequestDispatcher("./home.jsp").forward(request, response);	 
 			 }
 			  // request.getRequestDispatcher("./home.jsp").forward(request, response);	 
 		 }
