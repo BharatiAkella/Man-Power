@@ -5,7 +5,20 @@
 
         <html>
         <style>
-        	
+        	  button {
+                background-color: grey;
+                color:azure;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: auto;
+            }
+
+            button:hover {
+                opacity: 0.8;
+            }
+        	 
             table {
                 width: 60%;
             }
@@ -54,6 +67,7 @@
 		<header>
 		
             <h1 style= "text-align: center; color:#003300; background-color:silver; font-size:300%;">Force Home</h1>
+            <div class = "logout"><a href="./ManPowerController?action=logout"><button style= "float: right">Logout</button></a></div>
             </header>
             <div id = "table" >
             <form class="modal-content animate" action="./ManPowerController" method="POST" 

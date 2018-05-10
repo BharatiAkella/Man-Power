@@ -155,7 +155,7 @@
                 position: absolute;
                 right: 25px;
                 top: 0;
-                color: #000;
+                color:white;
                 font-size: 35px;
                 font-weight: bold;
             }
@@ -236,16 +236,20 @@ table th {
         </head>
         
         <body >
-      
+      		<br><br>
+      		            <div class = "logout"><a href="./ManPowerController?action=logout"><button style= "float: right">Logout</button></a></div>
+      		
             <button onclick="document.getElementById('postWork').style.display='block'" style="width:auto;">PostWork</button><br>
             <div id="postWork" class=" modal">
-                <form class="modal-content animate" action="./ManPowerController" method="POST">
-                    <h2> Work Form</h2>
+                <form class="modal-content animate" action="./ManPowerController" method="POST"
+                style = "background: url(http://hddesktopwallpapers.in/wp-content/uploads/2015/06/Plain-Wallpapers-HD-A32.jpg);
+                	background-repeat: no-repeat; background-size:cover;">
+                    <h2 style="color:aliceblue; text-align:center;"> Work Form</h2>
                     <div class="imgcontainer">
                         <span onclick="document.getElementById('postWork').style.display='none'" class="close" title="Close Modal">&times;</span>
                     </div>
-                    <div class="container">
-                        Service Types :
+                    <div class="container" >
+                       <h3 style="color:cornsilk;"> Service Types :</h3>
                         <select name="subserviceType">
      						<c:forEach items="${serviceTypesList}" var="serviceType">
    							<c:forEach items = "${serviceType.subServiceType}" var="subserviceType"><br>
@@ -253,13 +257,12 @@ table th {
     						</c:forEach>
     						</c:forEach>
 					</select>
-                        <br> Description : <textarea name="description" rows="6" cols="50"></textarea><br>
+                        <br><h3 style="color:cornsilk;"> Description :</h3><textarea name="description" rows="6" cols="50"></textarea><br><br>
                         <input type="hidden" name="action" value="postWork">
                         <input type="submit" value="Post Work">
                     </div>
                 </form>
             </div>
-            <div class = "logout"><a href="./ManPowerController?action=logout"><button>Logout</button></a></div>
             
 <table border="1" align="center" width=50%>
                     <tr>

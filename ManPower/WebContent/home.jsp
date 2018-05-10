@@ -291,7 +291,7 @@ img {vertical-align:cover;}
         <header>
         <h1 style="text-align: center;color:turquoise; background-color:black; font-size:350%">Man Power</h1>
 		</header>
-        <button onclick="document.getElementById('login').style.display='block'" style="width:10%">Login</button>
+        <button onclick="document.getElementById('login').style.display='block'" style="width:10%;float: right">Login</button>
         <button onclick="myFunction()" class="dropbtn">Register</button>
 
         <div id="login" class="modal">
